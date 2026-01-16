@@ -1,6 +1,6 @@
 # Network Tool
 
-NetScanner is a Python application that helps you monitor and analyse devices on your local network. It provides tools to scan your network, 
+Python application that helps you monitor and analyse devices on your local network. It provides tools to scan your network, 
 identify devices using the ARP table and OUI lookup, check network health, manage unknown hosts.
 
 ---
