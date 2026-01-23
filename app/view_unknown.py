@@ -14,8 +14,12 @@ def unkown_dev():
     from tkinter import Tk, Label, Button
     from tkinter import ttk
 
-    global known_devices
-
+    # Load known devices from JSON, or create empty dict if file does not exist
+    try:
+        with open(KNOWN_DEVICES_FILE, "r") as f:
+            known_devices = json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError):
+        known_devices = {}
 
     mac_values = {
         'UAA': {'0': 1, '1': 2, '4': 4, '5': 5, '8': 8, '9': 9, 'c': 12, 'd': 13},
