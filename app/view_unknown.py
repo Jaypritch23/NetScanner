@@ -126,14 +126,15 @@ def unkown_dev():
 
     def save_hostname(mac, entry, popup):
         """Save hostname to JSON database"""
-        global known_devices
+        known_devices
+
         name = entry.get().strip()
         if name:
             known_devices[mac] = name
             with open(KNOWN_DEVICES_FILE, "w") as f:
                 json.dump(known_devices, f, indent=4)
             popup.destroy()
-            print(f"Saved device: {mac} -> {name}")
+            print(f"Saved device: {mac} to {name}")
 
 
     def assign_hostname(event):
